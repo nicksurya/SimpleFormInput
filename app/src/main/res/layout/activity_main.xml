@@ -83,8 +83,8 @@
         app:bf_header_text_padding="8dp"
         app:bf_header_text_color="@android:color/holo_green_light"
         app:bf_header_background_color="@android:color/holo_purple"
-        app:bf_spinner_background_drawable="@drawable/input_box_drawable"
-        app:bf_spinner_text_padding="8dp"
+        app:bf_input_background_drawable="@drawable/input_box_drawable"
+        app:bf_input_text_padding="8dp"
         />
 
 </LinearLayout>
