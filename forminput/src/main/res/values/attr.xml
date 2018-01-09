@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BaseForm">
+        <attr name="bf_header_text" format="string" />
+        <attr name="bf_header_text_size" format="dimension" />
+        <attr name="bf_header_text_style" >
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+        <attr name="bf_header_text_padding" format="dimension" />
+        <attr name="bf_header_text_color" format="color" />
+        <attr name="bf_header_background_color" format="color" />
+        <attr name="bf_input_text_size" format="dimension" />
+        <attr name="bf_input_text_color" format="color" />
+        <attr name="bf_input_text_padding" format="dimension" />
+        <attr name="bf_input_background_drawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="TextInput">
+        <attr name="bf_input_text" format="string" />
+        <attr name="bf_input_hint" format="string" />
+        <attr name="bf_input_text_type">
+            <flag name="text" value="0"/>
+            <flag name="number" value="1"/>
+            <flag name="email" value="2"/>
+            <flag name="password" value="3"/>
+            <flag name="datetime" value="4"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="DatePickerInput">
+        <attr name="bf_date_time_hint" format="string" />
+        <attr name="bf_date_time_type">
+            <flag name="date" value="0"/>
+            <flag name="time" value="1"/>
+            <flag name="datetime" value="2"/>
+        </attr>
+        <attr name="bf_date_time_format" format="string" />
+    </declare-styleable>
+</resources>

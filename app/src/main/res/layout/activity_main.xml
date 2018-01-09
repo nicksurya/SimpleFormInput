@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <com.flagantz.forminput.TextInput
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:bf_header_text="Name"
+        app:bf_header_text_size="14sp"
+        app:bf_header_text_padding="8dp"
+        app:bf_header_text_style="italic"
+        app:bf_header_text_color="@android:color/white"
+        app:bf_header_background_color="@android:color/holo_orange_light"
+        app:bf_input_background_drawable="@drawable/input_box_drawable"
+        app:bf_input_hint="Please input your name"
+        app:bf_input_text_color="@android:color/black"
+        app:bf_input_text_padding="8dp"
+        app:bf_input_text_size="14sp"
+        app:bf_input_text_type="text"
+        />
+
+    <com.flagantz.forminput.TextInput
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bf_header_text="Age"
+        app:bf_header_text_size="14sp"
+        app:bf_header_text_padding="8dp"
+        app:bf_header_text_style="bold"
+        app:bf_header_text_color="@android:color/holo_red_dark"
+        app:bf_input_background_drawable="@drawable/input_box_drawable"
+        app:bf_input_hint="your age"
+        app:bf_input_text_color="@android:color/black"
+        app:bf_input_text_padding="8dp"
+        app:bf_input_text_size="14sp"
+        app:bf_input_text_type="number"
+        android:layout_marginBottom="12dp"
+        />
+
+    <com.flagantz.forminput.TextInput
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bf_header_text="Password"
+        app:bf_header_text_size="14sp"
+        app:bf_header_text_padding="8dp"
+        app:bf_header_text_color="@android:color/black"
+        app:bf_header_background_color="@android:color/holo_red_light"
+        app:bf_input_hint="type password"
+        app:bf_input_text_color="@android:color/black"
+        app:bf_input_text_padding="8dp"
+        app:bf_input_text_size="14sp"
+        app:bf_input_text_type="password"
+        android:layout_marginBottom="12dp"
+        />
+
+    <com.flagantz.forminput.TextInput
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bf_header_text="Email"
+        app:bf_header_text_size="14sp"
+        app:bf_header_text_padding="8dp"
+        app:bf_header_text_color="@android:color/holo_blue_bright"
+        app:bf_input_background_drawable="@drawable/input_box_drawable"
+        app:bf_input_hint="name@example.com"
+        app:bf_input_text_color="@android:color/black"
+        app:bf_input_text_padding="8dp"
+        app:bf_input_text_size="14sp"
+        app:bf_input_text_type="email"
+        android:layout_marginBottom="12dp"
+        />
+
+    <com.flagantz.forminput.SpinnerInput
+        android:id="@+id/spinner_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bf_header_text="Jumlah Anak"
+        app:bf_header_text_size="14sp"
+        app:bf_header_text_padding="8dp"
+        app:bf_header_text_color="@android:color/holo_green_light"
+        app:bf_header_background_color="@android:color/holo_purple"
+        app:bf_spinner_background_drawable="@drawable/input_box_drawable"
+        app:bf_spinner_text_padding="8dp"
+        />
+
+</LinearLayout>
