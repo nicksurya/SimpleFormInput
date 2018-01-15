@@ -64,22 +64,26 @@ public abstract class BaseForm extends FrameLayout {
             return;
         }
 
-        setHeaderText(mHeaderText);
+        if (mHeaderText != null) {
+            setHeaderText(mHeaderText);
 
-        if (mHeaderTextSize > 0) {
-            mHeaderTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mHeaderTextSize);
+            if (mHeaderTextSize > 0) {
+                mHeaderTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mHeaderTextSize);
+            }
+
+            mHeaderTextView.setTextColor(mHeaderTextColor);
+            mHeaderTextView.setTypeface(mHeaderTextView.getTypeface(),
+                    getSelectedTypeface(mHeaderTextStyle));
+
+            if (mHeaderTextPadding > 0) {
+                mHeaderTextView.setPadding(mHeaderTextPadding, mHeaderTextPadding, mHeaderTextPadding,
+                        mHeaderTextPadding);
+            }
+
+            mHeaderTextView.setBackgroundColor(mHeaderBackgroundColor);
+        } else {
+            mHeaderTextView.setVisibility(GONE);
         }
-
-        mHeaderTextView.setTextColor(mHeaderTextColor);
-        mHeaderTextView.setTypeface(mHeaderTextView.getTypeface(),
-                getSelectedTypeface(mHeaderTextStyle));
-
-        if (mHeaderTextPadding > 0) {
-            mHeaderTextView.setPadding(mHeaderTextPadding, mHeaderTextPadding, mHeaderTextPadding,
-                    mHeaderTextPadding);
-        }
-
-        mHeaderTextView.setBackgroundColor(mHeaderBackgroundColor);
     }
 
     public abstract void setHeaderText(String headerText);
