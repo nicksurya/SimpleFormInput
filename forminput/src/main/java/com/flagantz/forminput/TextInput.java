@@ -5,18 +5,28 @@ import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.res.ResourcesCompat;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class TextInput extends BaseForm {
+
+    private static final int DEFAULT_NUM_OF_LINES = 3;
+    private static final boolean DEFAULT_MULTI_LINES = false;
 
     EditText mInputTextView;
 
     String mText;
     String mHint;
     int mTextType;
+
+    int mMinLines;
+    int mMaxLines;
+    boolean mMultiLines;
 
     public TextInput(@NonNull Context context) {
         this(context, null);
@@ -30,6 +40,10 @@ public class TextInput extends BaseForm {
             mHint = a.getString(R.styleable.TextInput_bf_input_hint);
             mTextType = a.getInt(R.styleable.TextInput_bf_input_text_type, 0);
 
+            mMultiLines = a.getBoolean(R.styleable.TextInput_bf_input_multi_lines,
+                    DEFAULT_MULTI_LINES);
+            mMaxLines = a.getInt(R.styleable.TextInput_bf_input_max_lines, DEFAULT_NUM_OF_LINES);
+            mMinLines = a.getInt(R.styleable.TextInput_bf_input_min_lines, DEFAULT_NUM_OF_LINES);
             a.recycle();
         }
 
@@ -65,6 +79,19 @@ public class TextInput extends BaseForm {
                     ResourcesCompat.getDrawable(getResources(), mInputBackgroundDrawable, null));
         }
 
+        if (mMultiLines) {
+            mInputTextView.setSingleLine(false);
+
+            if (mMaxLines < mMinLines) {
+                mMaxLines = mMinLines;
+            }
+
+            mInputTextView.setMaxLines(mMaxLines);
+            mInputTextView.setMinLines(mMinLines);
+
+            mInputTextView.setGravity(Gravity.TOP);
+        }
+
     }
 
     @Override
@@ -79,5 +106,17 @@ public class TextInput extends BaseForm {
     @Override
     public String getInputValue() {
         return mInputTextView.getText().toString();
+    }
+
+    public void clearText() {
+        mInputTextView.getText().clear();
+    }
+
+    public void setFocus() {
+        mInputTextView.requestFocus();
+    }
+
+    public void setTextWatcher(TextWatcher textWatcher) {
+        mInputTextView.addTextChangedListener(textWatcher);
     }
 }

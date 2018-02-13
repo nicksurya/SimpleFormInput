@@ -27,6 +27,9 @@
             <flag name="password" value="3"/>
             <flag name="datetime" value="4"/>
         </attr>
+        <attr name="bf_input_min_lines" format="integer" />
+        <attr name="bf_input_max_lines" format="integer" />
+        <attr name="bf_input_multi_lines" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="DatePickerInput">

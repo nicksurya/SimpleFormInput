@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.flagantz.forminput.SpinnerInput;
+import com.flagantz.forminput.TextInput;
 
 import java.util.ArrayList;
 
@@ -25,5 +26,6 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("Enam");
 
         spinnerInput.setSpinnerItemList(arrayList);
+
     }
 }
