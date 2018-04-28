@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -17,6 +18,10 @@ public abstract class BaseForm extends FrameLayout {
     private static final int TYPE_BOLD = 1;
     private static final int TYPE_ITALIC = 2;
 
+    private static final int TEXT_LEFT = 0;
+    private static final int TEXT_RIGHT = 1;
+    private static final int TEXT_CENTERED = 2;
+
     TextView mHeaderTextView;
 
     String mHeaderText;
@@ -25,6 +30,7 @@ public abstract class BaseForm extends FrameLayout {
     int mHeaderTextColor;
     int mHeaderTextPadding;
     int mHeaderBackgroundColor;
+    int mHeaderTextGravity;
     int mInputTextSize;
     int mInputColor;
     int mInputPadding;
@@ -48,6 +54,7 @@ public abstract class BaseForm extends FrameLayout {
                     a.getDimensionPixelSize(R.styleable.BaseForm_bf_header_text_padding, 0);
             mHeaderBackgroundColor =
                     a.getColor(R.styleable.BaseForm_bf_header_background_color, Color.TRANSPARENT);
+            mHeaderTextGravity = a.getInt(R.styleable.BaseForm_bf_header_text_gravity, 0);
             mInputTextSize = a.getDimensionPixelSize(R.styleable.BaseForm_bf_input_text_size, 0);
             mInputColor = a.getColor(R.styleable.BaseForm_bf_input_text_color, Color.BLACK);
             mInputPadding = a.getDimensionPixelSize(R.styleable.BaseForm_bf_input_text_padding, 0);
@@ -81,6 +88,8 @@ public abstract class BaseForm extends FrameLayout {
             }
 
             mHeaderTextView.setBackgroundColor(mHeaderBackgroundColor);
+
+            mHeaderTextView.setGravity(getTextGravity(mHeaderTextGravity));
         } else {
             mHeaderTextView.setVisibility(GONE);
         }
@@ -99,6 +108,18 @@ public abstract class BaseForm extends FrameLayout {
             case TYPE_ITALIC :
             default:
                 return Typeface.ITALIC;
+        }
+    }
+
+    protected int getTextGravity(int gravity) {
+        switch (gravity) {
+            case TEXT_CENTERED :
+                return Gravity.CENTER;
+            case TEXT_RIGHT :
+                return Gravity.END;
+            case TEXT_LEFT :
+            default:
+                return Gravity.START;
         }
     }
 

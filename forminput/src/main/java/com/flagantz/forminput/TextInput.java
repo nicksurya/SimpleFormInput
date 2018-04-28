@@ -8,9 +8,7 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.widget.EditText;
-import android.widget.TextView;
 
 
 public class TextInput extends BaseForm {
@@ -23,6 +21,7 @@ public class TextInput extends BaseForm {
     String mText;
     String mHint;
     int mTextType;
+    int mTextGravity;
 
     int mMinLines;
     int mMaxLines;
@@ -44,6 +43,7 @@ public class TextInput extends BaseForm {
                     DEFAULT_MULTI_LINES);
             mMaxLines = a.getInt(R.styleable.TextInput_bf_input_max_lines, DEFAULT_NUM_OF_LINES);
             mMinLines = a.getInt(R.styleable.TextInput_bf_input_min_lines, DEFAULT_NUM_OF_LINES);
+            mTextGravity = a.getInt(R.styleable.TextInput_bf_input_text_gravity, 0);
             a.recycle();
         }
 
@@ -89,7 +89,7 @@ public class TextInput extends BaseForm {
             mInputTextView.setMaxLines(mMaxLines);
             mInputTextView.setMinLines(mMinLines);
 
-            mInputTextView.setGravity(Gravity.TOP);
+            mInputTextView.setGravity(getTextGravity(mTextGravity));
         }
 
     }

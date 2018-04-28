@@ -11,6 +11,11 @@
         <attr name="bf_header_text_padding" format="dimension" />
         <attr name="bf_header_text_color" format="color" />
         <attr name="bf_header_background_color" format="color" />
+        <attr name="bf_header_text_gravity">
+            <flag name="left" value="0" />
+            <flag name="right" value="1" />
+            <flag name="center" value="2" />
+        </attr>
         <attr name="bf_input_text_size" format="dimension" />
         <attr name="bf_input_text_color" format="color" />
         <attr name="bf_input_text_padding" format="dimension" />
@@ -30,6 +35,11 @@
         <attr name="bf_input_min_lines" format="integer" />
         <attr name="bf_input_max_lines" format="integer" />
         <attr name="bf_input_multi_lines" format="boolean" />
+        <attr name="bf_input_text_gravity">
+            <flag name="left" value="0" />
+            <flag name="right" value="1" />
+            <flag name="center" value="2" />
+        </attr>
     </declare-styleable>
 
     <declare-styleable name="DatePickerInput">
