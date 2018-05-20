@@ -108,6 +108,10 @@ public class TextInput extends BaseForm {
         return mInputTextView.getText().toString();
     }
 
+    public void setErrorInput(String errorMessage) {
+        mInputTextView.setError(errorMessage);
+    }
+
     public void clearText() {
         mInputTextView.getText().clear();
     }
