@@ -69,6 +69,9 @@ public class SpinnerInput extends BaseForm {
 
     @Override
     public String getInputValue() {
+        if (mInputSpinnerView.getSelectedItem() == null) {
+            return "";
+        }
         return mInputSpinnerView.getSelectedItem().toString();
     }
 

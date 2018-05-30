@@ -5,7 +5,9 @@ import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.res.ResourcesCompat;
+import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.text.method.DigitsKeyListener;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.EditText;
@@ -27,6 +29,9 @@ public class TextInput extends BaseForm {
     int mMaxLines;
     boolean mMultiLines;
 
+    int mMaxLength;
+    String mDigits;
+
     public TextInput(@NonNull Context context) {
         this(context, null);
     }
@@ -44,6 +49,8 @@ public class TextInput extends BaseForm {
             mMaxLines = a.getInt(R.styleable.TextInput_bf_input_max_lines, DEFAULT_NUM_OF_LINES);
             mMinLines = a.getInt(R.styleable.TextInput_bf_input_min_lines, DEFAULT_NUM_OF_LINES);
             mTextGravity = a.getInt(R.styleable.TextInput_bf_input_text_gravity, 0);
+            mMaxLength = a.getInt(R.styleable.TextInput_bf_input_max_length, 0);
+            mDigits = a.getString(R.styleable.TextInput_bf_input_digits);
             a.recycle();
         }
 
@@ -92,6 +99,14 @@ public class TextInput extends BaseForm {
             mInputTextView.setGravity(getTextGravity(mTextGravity));
         }
 
+        if (mMaxLength > 0) {
+            mInputTextView.setFilters(new InputFilter[] {
+                    new InputFilter.LengthFilter(mMaxLength) });
+        }
+
+        if (mDigits != null && !mDigits.equalsIgnoreCase("")) {
+            mInputTextView.setKeyListener(DigitsKeyListener.getInstance(mDigits));
+        }
     }
 
     @Override
@@ -122,5 +137,9 @@ public class TextInput extends BaseForm {
 
     public void setTextWatcher(TextWatcher textWatcher) {
         mInputTextView.addTextChangedListener(textWatcher);
+    }
+
+    public void setEnabled(boolean isEnabled) {
+        mInputTextView.setEnabled(isEnabled);
     }
 }

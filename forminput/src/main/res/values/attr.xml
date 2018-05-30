@@ -40,6 +40,8 @@
             <flag name="right" value="1" />
             <flag name="center" value="2" />
         </attr>
+        <attr name="bf_input_digits" format="string" />
+        <attr name="bf_input_max_length" format="integer" />
     </declare-styleable>
 
     <declare-styleable name="DatePickerInput">

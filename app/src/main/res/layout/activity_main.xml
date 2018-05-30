@@ -39,6 +39,8 @@
         app:bf_input_text_padding="8dp"
         app:bf_input_text_size="14sp"
         app:bf_input_text_type="number"
+        app:bf_input_max_length="10"
+        app:bf_input_digits="1234567890."
         android:layout_marginBottom="12dp"
         />
 
