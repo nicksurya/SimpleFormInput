@@ -2,6 +2,7 @@ package com.flagantz.forminputtest;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.flagantz.forminput.SpinnerInput;
 import com.flagantz.forminput.TextInput;
@@ -26,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("Enam");
 
         spinnerInput.setSpinnerItemList(arrayList);
+
+        TextInput textInput = (TextInput) findViewById(R.id.name_text_input);
+        textInput.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+
+            }
+        });
 
     }
 }

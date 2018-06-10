@@ -142,4 +142,8 @@ public class TextInput extends BaseForm {
     public void setEnabled(boolean isEnabled) {
         mInputTextView.setEnabled(isEnabled);
     }
+
+    public void setOnFocusChangeListener(OnFocusChangeListener listener) {
+        mInputTextView.setOnFocusChangeListener(listener);
+    }
 }
