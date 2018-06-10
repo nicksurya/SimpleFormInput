@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         spinnerInput.setSpinnerItemList(arrayList);
 
         TextInput textInput = (TextInput) findViewById(R.id.name_text_input);
-        textInput.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        textInput.setFocusListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
 
