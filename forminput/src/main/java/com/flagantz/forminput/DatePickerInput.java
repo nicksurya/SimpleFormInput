@@ -52,13 +52,18 @@ public class DatePickerInput extends BaseForm implements DatePickerDialog.OnDate
         //header initilize
         initHeaders();
 
+        //input initilize
+        mDateInputView.setText(mHint);
+
+        mDateInputView.setTextColor(mInputColor);
+        if (mInputPadding > 0) {
+            mDateInputView.setPadding(mInputPadding, mInputPadding, mInputPadding, mInputPadding);
+        }
+
         if (mInputBackgroundDrawable > 0) {
             mDateInputView.setBackground(
                     ResourcesCompat.getDrawable(getResources(), mInputBackgroundDrawable, null));
         }
-
-        //input initilize
-        mDateInputView.setText(mHint);
 
         mDateInputView.setOnClickListener(new OnClickListener() {
             @Override
