@@ -26,7 +26,7 @@
         app:bf_input_text_type="text"
         />
 
-    <com.flagantz.forminput.TextInput
+    <com.flagantz.forminput.DatePickerInput
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:bf_header_text="Age"
