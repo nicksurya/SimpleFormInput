@@ -100,6 +100,16 @@ public class SpinnerInput extends BaseForm {
         }
     }
 
+    public void setSpinnerItem(String item) {
+        for (int i = 0; i < mInputSpinnerView.getAdapter().getCount(); i++) {
+            String spinnerItem = (String) mInputSpinnerView.getAdapter().getItem(i);
+            if (item.equalsIgnoreCase(spinnerItem)) {
+                mInputSpinnerView.setSelection(i);
+                break;
+            }
+        }
+    }
+
     public interface Listener {
         void onInputChange(String newValue);
     }
